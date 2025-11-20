@@ -33,8 +33,9 @@
         "test": "cypress run",
         "lint": "eslint .",
         "format": "prettier --write .",
-        "build": "yarn lint && rollup -c",
-        "prepublishOnly": "yarn build"
+        "build": "rollup -c",
+        "prepare": "rollup -c",
+        "prepublishOnly": "yarn lint && yarn build"
     },
     "dependencies": {},
     "devDependencies": {
