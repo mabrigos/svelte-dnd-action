@@ -37,16 +37,20 @@ export function dndzone(node, options) {
     }
     validateOptions(options);
     const pointerZone = pointerDndZone(node, options);
-    const keyboardZone = keyboardDndZone(node, options);
+    const keyboardZone = options.keyboardDisabled ? null : keyboardDndZone(node, options);
     return {
         update: newOptions => {
             validateOptions(newOptions);
             pointerZone.update(newOptions);
-            keyboardZone.update(newOptions);
+            if (keyboardZone) {
+                keyboardZone.update(newOptions);
+            }
         },
         destroy: () => {
             pointerZone.destroy();
-            keyboardZone.destroy();
+            if (keyboardZone) {
+                keyboardZone.destroy();
+            }
         }
     };
 }
@@ -79,6 +83,7 @@ function validateOptions(options) {
         centreDraggedOnCursor,
         delayTouchStart,
         dropAnimationDisabled,
+        keyboardDisabled,
         ...rest
     } = options;
     /*eslint-enable*/

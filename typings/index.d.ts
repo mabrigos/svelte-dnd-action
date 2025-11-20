@@ -64,6 +64,7 @@ export interface Options<T extends Item = Item> {
      * false/undefined => drag starts instantly (legacy behaviour)
      */
     delayTouchStart?: boolean | number;
+    keyboardDisabled?: boolean; // when true, disables the keyboard drag functionality (Enter/Space to drag, Arrow keys to move)
 }
 
 export interface DndZoneAttributes<T> {
