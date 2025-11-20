@@ -43,7 +43,6 @@
         "@babel/preset-env": "^7.9.6",
         "@rollup/plugin-node-resolve": "^6.0.0",
         "babel-jest": "^26.0.1",
-        "cypress": "^4.5.0",
         "eslint": "^7.11.0",
         "husky": "^4.3.0",
         "lint-staged": "^10.5.1",
@@ -51,6 +50,9 @@
         "rollup": "^2.79.2",
         "rollup-plugin-babel": "^4.3.2",
         "rollup-plugin-copy": "^3.3.0"
+    },
+    "optionalDependencies": {
+        "cypress": "^4.5.0"
     },
     "peerDependencies": {
         "svelte": ">=3.23.0 || ^5.0.0-next.0"
